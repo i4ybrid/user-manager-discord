@@ -1,0 +1,16 @@
+{
+  "name": "user-manager-discord",
+  "version": "1.0.0",
+  "description": "Manage users on Discord based on a database or table",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "eric.yijia.hu@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.0",
+    "discord.js": "^14.6.0",
+    "winston": "^3.8.2"
+  }
+}
