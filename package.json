@@ -4,7 +4,7 @@
   "description": "Manage users on Discord based on a database or table",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node ./src/index.js"
   },
   "author": "eric.yijia.hu@gmail.com",
   "license": "ISC",

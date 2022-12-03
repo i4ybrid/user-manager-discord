@@ -1,5 +1,6 @@
-const { Client, GatewayIntentBits, IntentsBitField, Collection, IntegrationApplication } = require('discord.js');
+const { Client, GatewayIntentBits } = require('discord.js');
 const { discordBotToken } = require('../util/env');
+const commands = [require('../commands/banUser')]
 
 const DISCORD_INTENTS = [
     GatewayIntentBits.Guilds,
@@ -21,15 +22,25 @@ async function connect() {
     const discordClient = new Client({
         intents: DISCORD_INTENTS
     });
-    const loginPromise = discordClient.login(discordBotToken);
+    const loginPromise = await discordClient.login(discordBotToken);
     global.discordClient = discordClient;
 
-    //Load all commands for slash commands and inject hooks
     discordClient.once('ready', () => {
         global.logger.log('info', 'Application started...');
     });
 
+    loadCommands(discordClient);
+
     return loginPromise;
+}
+
+function loadCommands(discordClient) {
+    for (const command of commands) {
+        global.discordClient.api.applications(discordClient.user.id)
+            .commands.post({
+                ...command
+            });
+    }
 }
 
 module.exports = {

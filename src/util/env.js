@@ -1,33 +1,18 @@
 const {
-  discordToken,
+  homeServerId,
   discordBotToken,
-  mirrorToken,
-  cloneServerId,
-  serverId,
-  alertWebhook } = require('../../config/env.json');
-
-const headers = {
-  'Content-Type': 'application/json',
-  Authorization: discordToken,
-};
+  clientId,
+  roleName } = require('../../config/env.json');
 
 const botHeaders = {
   'Content-Type': 'application/json',
   Authorization: discordBotToken,
 };
 
-const mirrorHeaders = {
-  'Content-Type': 'application/json',
-  Authorization: mirrorToken,
-};
-
 module.exports = {
-  discordToken,
-  serverId,
+  homeServerId,
   discordBotToken,
-  mirrorHeaders,
-  headers,
   botHeaders,
-  cloneServerId,
-  alertWebhook,
+  clientId,
+  roleName,
 };

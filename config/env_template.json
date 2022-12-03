@@ -1,7 +1,7 @@
 {
-    "serverId": null,
-    "discordToken": null,
-    "mirrorToken": null,
+    "homeServerId": null,  
     "discordBotToken": null,
-    "cloneServerId": null
+    "clientSecret": null,
+    "clientId": null,
+    "roleName": "premium"
 }
