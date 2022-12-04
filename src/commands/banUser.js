@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 const name = 'ban';
+
 const data = new SlashCommandBuilder()
   .setName(name)
   .setDescription('Ban the user from all mirrors')
